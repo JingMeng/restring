@@ -2,7 +2,7 @@ package com.ice.restring;
 
 import android.content.res.Resources;
 import android.os.Build;
-import android.support.annotation.NonNull;
+import androidx.annotation.NonNull;
 import android.text.Html;
 
 /**
@@ -77,3 +77,4 @@ class RestringResources extends Resources {
         }
     }
 }
+

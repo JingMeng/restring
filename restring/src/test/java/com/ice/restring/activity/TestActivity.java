@@ -1,9 +1,9 @@
-package com.ice.restring.activity;
+﻿package com.ice.restring.activity;
 
 import android.content.Context;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
-import android.support.v7.app.AppCompatActivity;
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.ice.restring.R;
 import com.ice.restring.Restring;
@@ -22,3 +22,4 @@ public class TestActivity extends AppCompatActivity {
         setContentView(R.layout.test_layout);
     }
 }
+

@@ -4,12 +4,10 @@ buildscript {
 
     repositories {
         google()
-        jcenter()
+        mavenCentral()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:3.2.0-alpha06'
-        classpath 'com.github.dcendents:android-maven-gradle-plugin:2.0'
-        classpath 'com.jfrog.bintray.gradle:gradle-bintray-plugin:1.8.0'
+        classpath 'com.android.tools.build:gradle:8.2.1'
         classpath 'org.jacoco:org.jacoco.core:0.8.0'
     }
 }
@@ -17,7 +15,7 @@ buildscript {
 allprojects {
     repositories {
         google()
-        jcenter()
+        mavenCentral()
     }
 }
 
@@ -26,22 +24,26 @@ task clean(type: Delete) {
 }
 
 ext {
-    compileSdkVersion = 27
+    compileSdkVersion = 34
     buildToolsVersion = '27.0.3'
     minSdkVersion = 16
-    targetSdkVersion = 27
+    targetSdkVersion = 34
 
     //Library versions
     supportLibrariesVersion = '27.1.0'
 
     deps = [
-            supportAppCompat: "com.android.support:appcompat-v7:$supportLibrariesVersion",
-            supportDesign   : "com.android.support:design:$supportLibrariesVersion",
-            constraintLayout: "com.android.support.constraint:constraint-layout:1.0.2",
+            supportAppCompat: 'androidx.appcompat:appcompat:1.6.1',
+            supportDesign   : 'com.google.android.material:material:1.9.0',
+            constraintLayout: 'androidx.constraintlayout:constraintlayout:2.1.4',
 
             junit           : 'junit:junit:4.12',
             hamcrest        : 'org.hamcrest:hamcrest-junit:2.0.0.0',
             mockito         : 'org.mockito:mockito-core:2.+',
             robolectric     : 'org.robolectric:robolectric:3.7.1'
     ]
+}
+tasks.withType(JavaCompile).configureEach {
+    sourceCompatibility = JavaVersion.VERSION_11
+    targetCompatibility = JavaVersion.VERSION_11
 }
